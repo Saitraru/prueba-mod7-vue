@@ -1,26 +1,23 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { createRouter, createWebHistory } from "vue-router"; // Importa las funciones necesarias de vue-router
+import HomeView from "../views/HomeView.vue"; // Importa el componente de la vista Home
+import AboutView from "../views/AboutView.vue"; // Importa el componente de la vista About
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "Home",
+    component: HomeView, // Define la ruta para el componente HomeView
   },
   {
     path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    name: "About",
+    component: AboutView, // Define la ruta para el componente AboutView
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+  history: createWebHistory(process.env.BASE_URL), // Configura el modo de historial para el enrutador
+  routes, // Asigna las rutas definidas anteriormente
 });
 
-export default router;
+export default router; // Exporta el enrutador para que pueda ser usado en la aplicación
